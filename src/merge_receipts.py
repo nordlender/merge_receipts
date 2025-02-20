@@ -1,5 +1,5 @@
 from PIL import Image
-import merge
+from src import merge
 import os
 from time import sleep
 import re
