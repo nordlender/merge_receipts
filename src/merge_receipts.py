@@ -4,8 +4,6 @@ import os
 from time import sleep
 import re
 
-# Regex string to set a file that is first page of merged pdf
-REGEX_STRING = r"(?i)refusjonsskjema"
 
 def get_images(dir: str, files: list) -> list:
     """Takes a list of filenames with suffix, and a directory they are stored in.
@@ -23,12 +21,14 @@ def get_images(dir: str, files: list) -> list:
     return images
 
 
-def merge_receipts(parent_dir: str | os.PathLike, img_dir: str | os.PathLike) -> None:
+def merge_receipts(
+    parent_dir: str | os.PathLike, img_dir: str | os.PathLike, regex_str: str
+) -> None:
     """Merges receipts, places refund form first (name your refund form 'refusjonsskjema').
     parent_dir: directory where refund form is stored, and output destination
     img_dir: child directory where images are stored"""
-    
-    try:    
+
+    try:
         imgfiles = merge.getFiles(os.path.join(parent_dir, img_dir), ["jpg", "png"])
 
         images = get_images(os.path.join(parent_dir, img_dir), imgfiles)
@@ -47,7 +47,7 @@ def merge_receipts(parent_dir: str | os.PathLike, img_dir: str | os.PathLike) ->
         pdffiles = merge.getFiles(os.path.abspath(parent_dir))
 
         # Move refund form to start of list before merging
-        regex = re.compile(REGEX_STRING)
+        regex = re.compile(regex_str)
         for i in range(len(pdffiles)):
             if regex.match(pdffiles[i]):
                 pdffiles.insert(0, pdffiles[i])

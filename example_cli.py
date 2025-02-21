@@ -2,6 +2,8 @@ import src.merge_receipts as rmerge
 import sys
 import os
 
+REGEX_STRING = r"(?i)refusjonsskjema"
+
 if len(sys.argv) < 3 or len(sys.argv) > 3:
     if "--help" in sys.argv:
         print(

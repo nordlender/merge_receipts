@@ -29,4 +29,4 @@ To install requirements, do `pip install --upgrade requirements.txt` or `uv add 
 
 ## To do
 - Add another script, that takes a relative parent directory in cli instead, for uber fast usage
-- Change things around a bit to avoid having to edit merge_receipts.py to change the regex string
+- Structure project for build 
