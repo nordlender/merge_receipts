@@ -24,4 +24,4 @@ if len(sys.argv) < 3 or len(sys.argv) > 3:
 
 parent_dir = os.path.abspath(sys.argv[1])
 img_dir = sys.argv[2]
-rmerge.merge_receipts(parent_dir, img_dir)
+rmerge.merge_receipts(parent_dir, img_dir, REGEX_STRING)
