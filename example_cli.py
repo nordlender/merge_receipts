@@ -8,7 +8,7 @@ if len(sys.argv) < 3 or len(sys.argv) > 3:
     if "--help" in sys.argv:
         print(
             "Error! No argument given.\
-            \nsyntax: python cli_refusjon.py PARENT_FOLDER CHILD_IMG_FOLDER\
+            \nsyntax: python example_cli.py PARENT_FOLDER CHILD_IMG_FOLDER\
             \n\n Example: Refusjonsskjema is stored in C:/users/joe/Documents/refusjoner/februar/\
             \n Images of receipts are stored in refusjoner/februar/kvitteringer/\
             \n Then, run\
@@ -16,7 +16,7 @@ if len(sys.argv) < 3 or len(sys.argv) > 3:
         )
     else:
         print(
-            "syntax: python cli_refusjon.py PARENT_FOLDER_PATH CHILD_IMG_FOLDER\
+            "syntax: python example_cli.py PARENT_FOLDER_PATH CHILD_IMG_FOLDER\
             \n For help, see\
             \n python example_cli.py --help"
         )
