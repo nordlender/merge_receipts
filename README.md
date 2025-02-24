@@ -47,4 +47,5 @@ To install requirements, do `pip install --upgrade requirements.txt` or `uv add 
 
 ## To do
 - Add another script, that takes a relative parent directory in cli instead, for uber fast usage
-- Structure project for build 
+- Structure project for build
+- Make Qt app for newbies
